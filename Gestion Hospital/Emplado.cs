@@ -6,14 +6,14 @@ namespace Gestion_Hospital
     {
 
         string Nombre;
-        byte Experiencia;
+        byte Experiencia, Edad;
         double Salario;
 
-        public Empleado(string nombre, byte experiencia, double salario)
+        public Empleado(string nombre, byte edad, byte experiencia)
         {
             Nombre = nombre;
             Experiencia = experiencia;
-            Salario = salario;
+            Edad = edad;
         }
 
         public virtual void CalcularSalario()
@@ -23,7 +23,7 @@ namespace Gestion_Hospital
         }
         public virtual void Examinar()
         {
-            Console.WriteLine($"Nombre: {Nombre} \nAños de experiencia: {Experiencia}");
+            Console.WriteLine($"Nombre: {Nombre} \n Edad: {Edad}\nAños de experiencia: {Experiencia}");
             Console.ReadKey();
         }
     }
