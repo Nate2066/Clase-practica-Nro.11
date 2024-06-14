@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -15,15 +16,17 @@ namespace GestionVehiculos
 
         public override void HacerSonido()
         {
-            base.HacerSonido();
+            Console.Clear();
+            Console.WriteLine("El vehiculo esta haciendo un sonido");
+            SoundPlayer player = new SoundPlayer();
+            player.SoundLocation = "SonidoMoto.wav";
+            player.Load();
+            player.Play();
+            Console.ReadKey();
         }
         public override void MostrarInfo(int pNumeroAsignado)
         {
             base.MostrarInfo(pNumeroAsignado);
-        }
-        public override void Pitar()
-        {
-            base.Pitar();
         }
         public override void MostrarLista()
         {

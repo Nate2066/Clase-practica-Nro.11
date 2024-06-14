@@ -76,7 +76,7 @@ namespace GestionVehiculos
                                                     if (opc > 0 && opc < 6)
                                                     {
                                                         Console.Clear();
-                                                        Console.WriteLine("1. Mostrar info" + "\n2. borrar" + "\nClick para Volver");
+                                                        Console.WriteLine("1. Mostrar info" + "\n2. borrar" + "\n3. Hacer sonido" + "\nClick para Volver");
                                                         byte opc2 = Convert.ToByte(Console.ReadLine());
                                                         if(opc2 == 1)
                                                         {
@@ -86,6 +86,10 @@ namespace GestionVehiculos
                                                         else if(opc2 == 2)
                                                         {
                                                             moto.BorrarInfo(opc - 1);
+                                                        }
+                                                        else if (opc2 == 3)
+                                                        {
+                                                            moto.HacerSonido();
                                                         }
                                                     }
                                                     else if(opc == 6)
@@ -126,7 +130,7 @@ namespace GestionVehiculos
                                                     if (opc > 0 && opc < 6)
                                                     {
                                                         Console.Clear();
-                                                        Console.WriteLine("1. Mostrar info" + "\n2. borrar" + "\n3. Volver");
+                                                        Console.WriteLine("1. Mostrar info" + "\n2. borrar" + "\n3. Hacer sonido" + "\nClick para Volver");
                                                         byte opc2 = Convert.ToByte(Console.ReadLine());
                                                         if (opc2 == 1)
                                                         {
@@ -136,6 +140,10 @@ namespace GestionVehiculos
                                                         else if (opc2 == 2)
                                                         {
                                                             auto.BorrarInfo(opc - 1);
+                                                        }
+                                                        else if (opc2 == 3)
+                                                        {
+                                                            auto.HacerSonido();
                                                         }
                                                     }
                                                     else if (opc == 6)
@@ -176,7 +184,7 @@ namespace GestionVehiculos
                                                     if (opc > 0 && opc < 6)
                                                     {
                                                         Console.Clear();
-                                                        Console.WriteLine("1. Mostrar info" + "\n2. borrar" + "\n3. Volver");
+                                                        Console.WriteLine("1. Mostrar info" + "\n2. borrar" + "\n3. Hacer sonido" + "\nClick para Volver");
                                                         byte opc2 = Convert.ToByte(Console.ReadLine());
                                                         if (opc2 == 1)
                                                         {
@@ -187,7 +195,10 @@ namespace GestionVehiculos
                                                         {
                                                             camion.BorrarInfo(opc - 1);
                                                         }
-                                                        else if(opc2 == 3) { }
+                                                        else if(opc2 == 3)
+                                                        {
+                                                            camion.HacerSonido();
+                                                        }
                                                     }
                                                     else if (opc == 6)
                                                     {

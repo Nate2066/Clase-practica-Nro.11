@@ -6,6 +6,7 @@ namespace GestionVehiculos
 {
     public class Vehiculos
     {
+        
         private string[] Nombre = new string[5];
         private string[] Marca = new string[5];
         private string[] Color = new string[5];
@@ -18,14 +19,9 @@ namespace GestionVehiculos
             Color[pNumeroID] = pColor;
             TipoDeVehiculo = pTipoDeVehiculo;
         }
-
-        public virtual void Pitar()
-        {
-
-        }
         public virtual void HacerSonido()
         {
-
+            SoundPlayer player = new SoundPlayer();
         }
         public virtual void MostrarInfo(int pNumeroAsignado)
         {
