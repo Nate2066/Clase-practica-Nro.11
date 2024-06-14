@@ -7,7 +7,7 @@ namespace Gestion_Hospital
     {
         // Base 
         string[] empleados = new string[10];
-
+        byte help = 0;
         //Metodos
 
         public void VerEmpleados()
@@ -47,17 +47,25 @@ namespace Gestion_Hospital
             Console.WriteLine("Ingrese el nombre del trabajador");
             string Nombre = Console.ReadLine();
 
-            Empleado empleado = new Empleado(Nombre);
+            while (help < empleados.Length)
+            {
 
-            Console.WriteLine("Ingrese edad del trabajador");
-            byte Edad = Convert.ToByte(Console.ReadLine());
-            Console.WriteLine("Ingrese edad del trabajador");
-            byte Experiencia = Convert.ToByte(Console.ReadLine());
+                
 
-            empleado.Completar(Experiencia, Edad);
+                Empleado empleado = new Empleado(Nombre);
 
-            Console.WriteLine("Empleado añadido");
-            Console.ReadKey();
+                Console.WriteLine("Ingrese edad del trabajador");
+                byte Edad = Convert.ToByte(Console.ReadLine());
+                Console.WriteLine("Ingrese edad del trabajador");
+                byte Experiencia = Convert.ToByte(Console.ReadLine());
+
+                empleado.Completar(Experiencia, Edad);
+
+                Console.WriteLine("Empleado añadido");
+                Console.ReadKey();
+
+                help++;
+            }
         }
 
         public void EliminarEmpleado()
