@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestionReserva", "GestionRe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestionVehiculos", "GestionVehiculos\GestionVehiculos.csproj", "{B816DE77-94D9-4C22-890E-EFFE940C7A64}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gestion Hospital", "Gestion Hospital\Gestion Hospital.csproj", "{5B8761EA-D49C-4B1C-B256-B3FF781D7937}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gestion Eventos", "Gestion Eventos\Gestion Eventos.csproj", "{A5B9427D-059D-41AE-9E45-DBE2F360C5EE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{B816DE77-94D9-4C22-890E-EFFE940C7A64}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B816DE77-94D9-4C22-890E-EFFE940C7A64}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B816DE77-94D9-4C22-890E-EFFE940C7A64}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B8761EA-D49C-4B1C-B256-B3FF781D7937}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B8761EA-D49C-4B1C-B256-B3FF781D7937}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B8761EA-D49C-4B1C-B256-B3FF781D7937}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B8761EA-D49C-4B1C-B256-B3FF781D7937}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5B9427D-059D-41AE-9E45-DBE2F360C5EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5B9427D-059D-41AE-9E45-DBE2F360C5EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5B9427D-059D-41AE-9E45-DBE2F360C5EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5B9427D-059D-41AE-9E45-DBE2F360C5EE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
