@@ -5,13 +5,17 @@ namespace Gestion_Hospital
     public class Empleado
     {
 
-        string Nombre;
-        byte Experiencia, Edad;
-        double Salario;
+        public string Nombre;
+        private byte Experiencia, Edad;
+        private double Salario;
 
-        public Empleado(string nombre, byte edad, byte experiencia)
+        public Empleado(string nombre)
         {
             Nombre = nombre;
+        }
+
+        public virtual void Completar(byte experiencia, byte edad)
+        {
             Experiencia = experiencia;
             Edad = edad;
         }

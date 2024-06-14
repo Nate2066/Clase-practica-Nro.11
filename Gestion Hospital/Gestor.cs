@@ -5,14 +5,38 @@ namespace Gestion_Hospital
 {
     public class Gestor //Manejo de operaciones
     {
+        // Base 
+        string[] empleados = new string[10];
+        byte help = 0;
+        //Metodos
+
         public void VerEmpleados()
         {
-            Console.WriteLine("Empleados:\n");
+            Console.WriteLine("---------Empleados----------\n");
+
+            for (int i = 0; i < empleados.Length; i++)
+            {
+                Console.WriteLine(empleados[i]);
+            }
         }
 
         public void ExaminarEmpleado()
         {
+            Console.Clear();
+            Console.WriteLine("---------Examinar empleados----------\n");
+            Console.WriteLine("Ingrese el nombre del empleado a buscar");
+            string nombre = Console.ReadLine();
+            for (int i = 0; i < empleados.Length; i++)
+            {
+                if (nombre == empleados[i])
+                {
+                    Empleado Empleado = new Empleado(nombre);
+                    Empleado.Examinar();
 
+                    break;
+                }
+            }
+            Console.ReadKey();
         }
 
         public void AgregarEmpleado()
@@ -22,18 +46,67 @@ namespace Gestion_Hospital
 
             Console.WriteLine("Ingrese el nombre del trabajador");
             string Nombre = Console.ReadLine();
-            Console.WriteLine("Ingrese edad del trabajador");
-            byte Edad = Convert.ToByte(Console.ReadLine());
-            Console.WriteLine("Ingrese edad del trabajador");
-            byte Experiencia = Convert.ToByte(Console.ReadLine());
 
-            Empleado empleado = new Empleado(Nombre,Edad,Experiencia);
-            Console.ReadKey();
+            Console.WriteLine("Ingrese el cargo del trabajador: 1.Doctor, 2.Enfermero, 3.Pediatra");
+
+            switch (Console.ReadLine())
+            {
+                case "1":
+                    Doctor doctor = new Doctor(Nombre);
+                    break;
+                case "2":
+                    Enfermero enfermero = new Enfermero(Nombre);
+
+                    break;
+                case "3":
+                    Pediatra pedriatra = new Pediatra(Nombre);
+
+                    break;
+                default:
+                    Console.WriteLine("Opcion erronea");
+                    break;
+            }
+            while (help < empleados.Length)
+            {
+
+                
+
+                Empleado empleado = new Empleado(Nombre);
+
+                Console.WriteLine("Ingrese edad del trabajador");
+                byte Edad = Convert.ToByte(Console.ReadLine());
+                Console.WriteLine("Ingrese edad del trabajador");
+                byte Experiencia = Convert.ToByte(Console.ReadLine());
+
+                empleado.Completar(Experiencia, Edad);
+
+                Console.WriteLine("Empleado añadido");
+                Console.ReadKey();
+
+                help++;
+            }
         }
 
         public void EliminarEmpleado()
         {
+            Console.Clear();
+            Console.WriteLine("---------Eliminar empleados----------\n");
+            Console.WriteLine("Ingrese el nombre del empleado a buscar");
 
+            string nombre = Console.ReadLine();
+
+            foreach (string item in empleados)
+            {
+                if (nombre == item)
+                {
+                    Empleado Empleado = new Empleado(nombre);
+                    Empleado.Examinar();
+                    break;
+                }
+            }
+
+            Console.WriteLine("Empleado eliminado");
+            Console.ReadKey();
         }
     }
 }

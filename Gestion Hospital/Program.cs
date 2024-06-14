@@ -13,7 +13,7 @@ namespace Gestion_Hospital
 
             //Bienvenida
             Console.WriteLine("---------Bienvenido al sistema de gestion de empleados----------");
-            Console.WriteLine(".Click para continuar");
+            Console.WriteLine("Enter para continuar");
             Console.ReadKey();
             do
             {
@@ -22,11 +22,11 @@ namespace Gestion_Hospital
                     //Menú :P
                     Console.Clear();
                     Console.WriteLine("==========GESTION DE EMPLEAOS==========");
-                    Console.WriteLine("*\t\tQue desea realizar\n");
-                    Console.WriteLine("\t1.   Ver lista de empleados");
-                    Console.WriteLine("\t2.   Agregar nuevo empleado");
-                    Console.WriteLine("\t3.   Eliminar empleados");
-                    Console.WriteLine("\t4.   Examimar empleados");
+                    Console.WriteLine("*Que desea realizar\n");
+                    Console.WriteLine("1.   Ver lista de empleados");
+                    Console.WriteLine("2.   Agregar nuevo empleado");
+                    Console.WriteLine("3.   Eliminar empleados");
+                    Console.WriteLine("4.   Examimar empleados");
                     Console.WriteLine("                             5.  *Salir*");
                     Console.WriteLine("========================================");
 

@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Gestion_Hospital
 {
-    public class Doctor : Empleado
+    public class Pediatra : Empleado
     {
-        public Doctor(string nombre) : base(nombre)
+        public Pediatra(string nombre) : base(nombre)
         {
         }
     }

@@ -8,6 +8,8 @@ namespace Gestion_Hospital
 {
     public class Enfermero : Empleado
     {
-
+        public Enfermero(string nombre) : base(nombre)
+        {
+        }
     }
 }
