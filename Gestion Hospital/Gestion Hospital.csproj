@@ -44,7 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Doctor.cs" />
-    <Compile Include="Emplado.cs" />
+    <Compile Include="Empleado.cs" />
     <Compile Include="Enfermero.cs" />
     <Compile Include="Gestor.cs" />
     <Compile Include="Program.cs" />

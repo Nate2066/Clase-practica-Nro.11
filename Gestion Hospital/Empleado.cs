@@ -9,7 +9,7 @@ namespace Gestion_Hospital
         private byte Experiencia, Edad;
         private double Salario;
 
-        public Empleado(string nombre/*, byte edad, byte experiencia*/)
+        public Empleado(string nombre)
         {
             Nombre = nombre;
         }
