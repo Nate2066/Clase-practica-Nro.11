@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace GestionVehiculos
 {
-    public class AutoMovil : Vehiculos
+    public class Camion : Vehiculos
     {
-        public AutoMovil(string pNombre, string pMarca, string pColor, string pTipoDeVehiculo, int pNumeroID) : base(pNombre, pMarca, pColor, pTipoDeVehiculo, pNumeroID)
-        { 
+        public Camion(string pNombre, string pMarca, string pColor, string pTipoDeVehiculo, int pNumeroID) : base(pNombre, pMarca, pColor, pTipoDeVehiculo, pNumeroID)
+        {
 
         }
 
