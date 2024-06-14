@@ -47,6 +47,25 @@ namespace Gestion_Hospital
             Console.WriteLine("Ingrese el nombre del trabajador");
             string Nombre = Console.ReadLine();
 
+            Console.WriteLine("Ingrese el cargo del trabajador: 1.Doctor, 2.Enfermero, 3.Pediatra");
+
+            switch (Console.ReadLine())
+            {
+                case "1":
+                    Doctor doctor = new Doctor(Nombre);
+                    break;
+                case "2":
+                    Enfermero enfermero = new Enfermero(Nombre);
+
+                    break;
+                case "3":
+                    Pediatra pedriatra = new Pediatra(Nombre);
+
+                    break;
+                default:
+                    Console.WriteLine("Opcion erronea");
+                    break;
+            }
             while (help < empleados.Length)
             {
 

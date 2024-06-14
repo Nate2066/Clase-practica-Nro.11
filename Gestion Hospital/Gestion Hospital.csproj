@@ -47,6 +47,7 @@
     <Compile Include="Empleado.cs" />
     <Compile Include="Enfermero.cs" />
     <Compile Include="Gestor.cs" />
+    <Compile Include="Pediatra.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
