@@ -9,7 +9,7 @@ namespace Gestion_Hospital
         {
         }
 
-        public override void HacerSonido()
+        public override void CalcularSalario()
         {
             Console.Clear();
             Console.WriteLine("El vehiculo esta haciendo un sonido");
@@ -27,10 +27,10 @@ namespace Gestion_Hospital
         {
             base.MostrarLista();
         }
-        public override void AgregarInfo(string pNombre, string pMarca, string pColor)
+        /*public override void AgregarInfo(string pNombre, string pMarca, string pColor)
         {
             base.AgregarInfo(pNombre, pMarca, pColor);
-        }
+        }*/
         public override void BorrarInfo(int NumeroIdentificador)
         {
             base.BorrarInfo(NumeroIdentificador);

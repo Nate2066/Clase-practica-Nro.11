@@ -70,7 +70,7 @@ namespace Gestion_Hospital
                                                     if (opc > 0 && opc < 6)
                                                     {
                                                         Console.Clear();
-                                                        Console.WriteLine("1. Mostrar info  \n2. borrar \n3. Hacer sonido   \nClick para Volver");
+                                                        Console.WriteLine("1. Mostrar info  \n2. borrar \n3. Calcular Salario   \nClick para Volver");
                                                         byte opc2 = Convert.ToByte(Console.ReadLine());
                                                         if (opc2 == 1)
                                                         {
@@ -82,7 +82,7 @@ namespace Gestion_Hospital
                                                         }
                                                         else if (opc2 == 3)
                                                         {
-                                                            doctor.HacerSonido();
+                                                            doctor.CalcularSalario();
                                                         }
                                                     }
                                                     else if (opc == 6)
@@ -117,7 +117,7 @@ namespace Gestion_Hospital
                                                     if (opc > 0 && opc < 6)
                                                     {
                                                         Console.Clear();
-                                                        Console.WriteLine("1. Mostrar info  \n2. borrar  \n3. Hacer sonido  \nClick para Volver");
+                                                        Console.WriteLine("1. Mostrar info  \n2. borrar  \n3. Calcular Salario  \nClick para Volver");
                                                         byte opc2 = Convert.ToByte(Console.ReadLine());
                                                         if (opc2 == 1)
                                                         {
@@ -129,7 +129,7 @@ namespace Gestion_Hospital
                                                         }
                                                         else if (opc2 == 3)
                                                         {
-                                                            enfermero.HacerSonido();
+                                                            enfermero.CalcularSalario();
                                                         }
                                                     }
                                                     else if (opc == 6)
@@ -164,7 +164,7 @@ namespace Gestion_Hospital
                                                     if (opc > 0 && opc < 6)
                                                     {
                                                         Console.Clear();
-                                                        Console.WriteLine("1. Mostrar info  \n2. borrar \n3. Hacer sonido   \nClick para Volver");
+                                                        Console.WriteLine("1. Mostrar info  \n2. borrar \n3. Calcular Salario   \nClick para Volver");
                                                         byte opc2 = Convert.ToByte(Console.ReadLine());
                                                         if (opc2 == 1)
                                                         {
@@ -176,7 +176,7 @@ namespace Gestion_Hospital
                                                         }
                                                         else if (opc2 == 3)
                                                         {
-                                                            pediatra.HacerSonido();
+                                                            pediatra.CalcularSalario();
                                                         }
                                                     }
                                                     else if (opc == 6)
@@ -236,35 +236,35 @@ namespace Gestion_Hospital
                                         case 1:
                                             Console.Clear();
                                             Console.WriteLine("Nombre del Empleado         \n>>");
-                                            NombreEmpleado  = $"Doctor {Console.ReadLine()}";
+                                            NombreEmpleado  = Console.ReadLine();
                                             Console.WriteLine("Edad del Empleado           \n>>");
                                             EdadEmpleado    = Console.ReadLine();
                                             Console.WriteLine("Experiencia del Empleado    \n>>");
                                             ExperienciaEmpleado = Console.ReadLine();
 
-                                            pediatra.AgregarInfo(NombreEmpleado, EdadEmpleado, ExperienciaEmpleado);
+                                            doctor.AgregarInfo(NombreEmpleado, EdadEmpleado, ExperienciaEmpleado, "Doctor");
                                             break;
                                         case 2:
                                             Console.Clear();
                                             Console.WriteLine("Nombre del Empleado         \n>>");
-                                            NombreEmpleado  = $"Enfermero {Console.ReadLine()}";
+                                            NombreEmpleado = Console.ReadLine();
                                             Console.WriteLine("Edad del Empleado           \n>>");
                                             EdadEmpleado    = Console.ReadLine();
                                             Console.WriteLine("Experiencia del Empleado    \n>>");
                                             ExperienciaEmpleado = Console.ReadLine();
 
-                                            doctor.AgregarInfo(NombreEmpleado, EdadEmpleado, ExperienciaEmpleado);
+                                            enfermero.AgregarInfo(NombreEmpleado, EdadEmpleado, ExperienciaEmpleado, "Enfermero");
                                             break;
                                         case 3:
                                             Console.Clear();
                                             Console.WriteLine("Nombre del Empleado         \n>>");
-                                            NombreEmpleado  = $"Pediatra {Console.ReadLine()}";
+                                            NombreEmpleado  = Console.ReadLine();
                                             Console.WriteLine("Edad del Empleado           \n>>");
                                             EdadEmpleado    = Console.ReadLine();
                                             Console.WriteLine("Experiencia del Empleado    \n>>");
                                             ExperienciaEmpleado = Console.ReadLine();
 
-                                            enfermero.AgregarInfo(NombreEmpleado, EdadEmpleado, ExperienciaEmpleado);
+                                            pediatra.AgregarInfo(NombreEmpleado, EdadEmpleado, ExperienciaEmpleado, "Pediatra");
                                             break;
                                         case 4:
                                             Cancelar = true;
