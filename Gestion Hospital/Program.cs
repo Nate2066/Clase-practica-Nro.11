@@ -1,6 +1,7 @@
-﻿using System;
+﻿
+using System;
 
-namespace Gestion_Hospital
+namespace GestionHospital
 {
     internal class Program
     {
@@ -8,35 +9,33 @@ namespace Gestion_Hospital
         {
             //Variables principales
             //El "default" asigna los valores por defecto a una variable, en caso de un string seria un espacio y en caso de un int seria un "0", se hace uso de esta para asignar mas facilmente un valor por defecto
-            
-            bool    Volver                  = false;
-            bool    Cancelar                = false;
-            bool    Salir                   = false;
-            string  NombreEmpleado          = default;
-            string  EdadEmpleado            = default;
-            string  ExperienciaEmpleado     = default;
-            string  TipoEmpleado            = default;
-            int     ID                      = default;
+            string Tipo = default;
+            string Nombre = default;
+            byte Exp = default;
+            int ID = default;
 
-            Doctor      doctor      = new Doctor    (NombreEmpleado, EdadEmpleado, ExperienciaEmpleado, TipoEmpleado, ID);
-            Enfermero   enfermero   = new Enfermero (NombreEmpleado, EdadEmpleado, ExperienciaEmpleado, TipoEmpleado, ID);
-            Pediatra    pediatra    = new Pediatra  (NombreEmpleado, EdadEmpleado, ExperienciaEmpleado, TipoEmpleado, ID);
+            bool Salir = false;
+            bool Volver = false;
+            bool Cancelar = false;
+
+            Doctor Doctor = new Doctor(Tipo, Nombre, Exp, ID);
+            Enfermero Enfermero = new Enfermero(Tipo, Nombre, Exp, ID);
+            Pediatra Pediatra = new Pediatra(Tipo, Nombre, Exp, ID);
 
             //Bienvenida
-            Console.WriteLine("---------Binenvenido al sistema de gestion de empleados----------");
-            Console.WriteLine(".Click para continuar");
+            Console.WriteLine("---------Bienvenido al sistema de gestion de hospital----------");
+            Console.WriteLine("Precione cualquier tecla para continuar");
             Console.ReadKey();
             do
             {
                 try
                 {
-                    //Menu :P
                     Console.Clear();
                     Console.WriteLine("==========GESTION DE EMPLEADOS==========");
                     Console.WriteLine("*Que desea realizar?                  \n");
-                    Console.WriteLine("1.   Ver lista de Empleados             ");
-                    Console.WriteLine("2.   Agregar nuevo Empleado           \n");
-                    Console.WriteLine("                             3.  *Salir*");
+                    Console.WriteLine("1.   Ver lista de Empleados");
+                    Console.WriteLine("2.   Agregar nuevo Empleado\n");
+                    Console.WriteLine("                             0.  *Salir*");
                     Console.WriteLine("========================================");
 
                     switch (Convert.ToByte(Console.ReadLine()))
@@ -47,15 +46,12 @@ namespace Gestion_Hospital
                                 try
                                 {
                                     Console.Clear();
-                                    Console.WriteLine("==========Lista de Empleados==========\n");
-                                    Console.WriteLine("*Elija una opcion*                      ");
-                                    Console.WriteLine("1. Doctores                             ");
-                                    Console.WriteLine("2. Enfermeros                           ");
-                                    Console.WriteLine("3. Pediatras                          \n");
-                                    Console.WriteLine("4. Volver                               ");
-                                    byte opcSegundoMenu = Convert.ToByte(Console.ReadLine());
+                                    Console.WriteLine("==========Lista de Empleados==========" + "\n");
+                                    MenuEleccion();
 
-                                    switch (opcSegundoMenu)
+                                    byte opcMenu = Convert.ToByte(Console.ReadLine());
+
+                                    switch (opcMenu)
                                     {
                                         case 1:
                                             do
@@ -64,25 +60,26 @@ namespace Gestion_Hospital
                                                 {
                                                     Console.Clear();
                                                     Console.WriteLine("-Doctores-");
-                                                    pediatra.MostrarLista();
-                                                    Console.WriteLine("\nSeleccione uno para ver o eliminar \n6. Volver");
+                                                    Pediatra.MostrarLista();
+                                                    Console.WriteLine("\n" + "Seleccione uno para ver o eliminar" + "\n6. Volver");
                                                     byte opc = Convert.ToByte(Console.ReadLine());
                                                     if (opc > 0 && opc < 6)
                                                     {
                                                         Console.Clear();
-                                                        Console.WriteLine("1. Mostrar info  \n2. borrar \n3. Calcular Salario   \nClick para Volver");
+                                                        Console.WriteLine("1. Mostrar info" + "\n2. borrar" + "\n3. Calcular salario" + "\n4. Volver");
                                                         byte opc2 = Convert.ToByte(Console.ReadLine());
                                                         if (opc2 == 1)
                                                         {
-                                                            doctor.MostrarInfo(opc - 1);
+                                                            Doctor.MostrarInfo(Convert.ToByte(opc - 1));
+
                                                         }
                                                         else if (opc2 == 2)
                                                         {
-                                                            doctor.BorrarInfo(opc - 1);
+                                                            Doctor.BorrarInfo(Convert.ToByte(opc - 1));
                                                         }
                                                         else if (opc2 == 3)
                                                         {
-                                                            doctor.CalcularSalario();
+                                                            Doctor.CalcularSalario(Convert.ToByte(opc - 1));
                                                         }
                                                     }
                                                     else if (opc == 6)
@@ -110,29 +107,31 @@ namespace Gestion_Hospital
                                                 try
                                                 {
                                                     Console.Clear();
-                                                    Console.WriteLine("-Enfermeros-");
-                                                    doctor.MostrarLista();
-                                                    Console.WriteLine("\nSeleccione uno para ver o eliminar    \n6. Volver");
+                                                    Console.WriteLine("-Pediatras-");
+                                                    Doctor.MostrarLista();
+                                                    Console.WriteLine("\n" + "Seleccione uno para ver o eliminar" + "\n0. Volver");
                                                     byte opc = Convert.ToByte(Console.ReadLine());
                                                     if (opc > 0 && opc < 6)
                                                     {
                                                         Console.Clear();
-                                                        Console.WriteLine("1. Mostrar info  \n2. borrar  \n3. Calcular Salario  \nClick para Volver");
+                                                        Console.WriteLine("1. Mostrar info" + "\n2. borrar" + "\n3. Calcular salario" + "\nClick para Volver");
                                                         byte opc2 = Convert.ToByte(Console.ReadLine());
                                                         if (opc2 == 1)
                                                         {
-                                                            enfermero.MostrarInfo(opc - 1);
+                                                            Pediatra.MostrarInfo(Convert.ToByte(opc - 1));
+
                                                         }
                                                         else if (opc2 == 2)
                                                         {
-                                                            enfermero.BorrarInfo(opc - 1);
+                                                            Pediatra.BorrarInfo(Convert.ToByte(opc - 1));
                                                         }
                                                         else if (opc2 == 3)
                                                         {
-                                                            enfermero.CalcularSalario();
+                                                            Doctor.CalcularSalario(Convert.ToByte(opc - 1));
+
                                                         }
                                                     }
-                                                    else if (opc == 6)
+                                                    else if (opc == 0)
                                                     {
                                                         Cancelar = true;
                                                     }
@@ -157,26 +156,27 @@ namespace Gestion_Hospital
                                                 try
                                                 {
                                                     Console.Clear();
-                                                    Console.WriteLine("-Pediatras-");
-                                                    enfermero.MostrarLista();
-                                                    Console.WriteLine("\nSeleccione uno para ver o eliminar    \n6. Volver");
+                                                    Console.WriteLine("-Enfermeros-");
+                                                    Enfermero.MostrarLista();
+                                                    Console.WriteLine("\n" + "Seleccione uno para ver o eliminar" + "\n6. Volver");
                                                     byte opc = Convert.ToByte(Console.ReadLine());
                                                     if (opc > 0 && opc < 6)
                                                     {
                                                         Console.Clear();
-                                                        Console.WriteLine("1. Mostrar info  \n2. borrar \n3. Calcular Salario   \nClick para Volver");
+                                                        Console.WriteLine("1. Mostrar info" + "\n2. borrar" + "\n3. Calcular salario" + "\nClick para Volver");
                                                         byte opc2 = Convert.ToByte(Console.ReadLine());
                                                         if (opc2 == 1)
                                                         {
-                                                            pediatra.MostrarInfo(opc - 1);
+                                                            Enfermero.MostrarInfo(Convert.ToByte(opc - 1));
+
                                                         }
                                                         else if (opc2 == 2)
                                                         {
-                                                            pediatra.BorrarInfo(opc - 1);
+                                                            Enfermero.BorrarInfo(Convert.ToByte(opc - 1));
                                                         }
                                                         else if (opc2 == 3)
                                                         {
-                                                            pediatra.CalcularSalario();
+                                                            Doctor.CalcularSalario(Convert.ToByte(opc - 1));
                                                         }
                                                     }
                                                     else if (opc == 6)
@@ -223,48 +223,42 @@ namespace Gestion_Hospital
                                 {
                                     Console.Clear();
                                     Console.WriteLine("==========Agregar Empleado==========\n");
-                                    Console.WriteLine("*Elija un tipo de Empleado*           ");
-                                    Console.WriteLine("1. Doctor                             ");
-                                    Console.WriteLine("2. Enfermero                          ");
-                                    Console.WriteLine("3. Pediatra                           ");
-                                    Console.WriteLine("4. Volver                             ");
-                                    Console.WriteLine("====================================  ");
-                                    byte opcTipoEmpleado = Convert.ToByte(Console.ReadLine());
+                                    MenuEleccion();
+                                    byte opcTipoVehiculo = Convert.ToByte(Console.ReadLine());
 
-                                    switch (opcTipoEmpleado)
+                                    switch (opcTipoVehiculo)
                                     {
                                         case 1:
                                             Console.Clear();
-                                            Console.WriteLine("Nombre del Empleado         \n>>");
-                                            NombreEmpleado  = Console.ReadLine();
-                                            Console.WriteLine("Edad del Empleado           \n>>");
-                                            EdadEmpleado    = Console.ReadLine();
-                                            Console.WriteLine("Experiencia del Empleado    \n>>");
-                                            ExperienciaEmpleado = Console.ReadLine();
-
-                                            doctor.AgregarInfo(NombreEmpleado, EdadEmpleado, ExperienciaEmpleado, "Doctor");
+                                            Console.WriteLine("Nombre del empleado");
+                                            Console.Write(">>");
+                                            Nombre = Console.ReadLine();
+                                            Console.WriteLine("Años de experiencia");
+                                            Console.Write(">>");
+                                            Exp = Convert.ToByte(Console.ReadLine());
+                                            Pediatra.AgregarInfo("Doctor", Nombre, Exp);
                                             break;
                                         case 2:
                                             Console.Clear();
-                                            Console.WriteLine("Nombre del Empleado         \n>>");
-                                            NombreEmpleado = Console.ReadLine();
-                                            Console.WriteLine("Edad del Empleado           \n>>");
-                                            EdadEmpleado    = Console.ReadLine();
-                                            Console.WriteLine("Experiencia del Empleado    \n>>");
-                                            ExperienciaEmpleado = Console.ReadLine();
+                                            Console.WriteLine("Nombre del empleado");
+                                            Console.Write(">>");
+                                            Nombre = Console.ReadLine();
+                                            Console.WriteLine("Años de experiencia");
+                                            Console.Write(">>");
+                                            Exp = Convert.ToByte(Console.ReadLine());
 
-                                            enfermero.AgregarInfo(NombreEmpleado, EdadEmpleado, ExperienciaEmpleado, "Enfermero");
+                                            Doctor.AgregarInfo("Pediatra", Nombre, Exp);
                                             break;
                                         case 3:
                                             Console.Clear();
-                                            Console.WriteLine("Nombre del Empleado         \n>>");
-                                            NombreEmpleado  = Console.ReadLine();
-                                            Console.WriteLine("Edad del Empleado           \n>>");
-                                            EdadEmpleado    = Console.ReadLine();
-                                            Console.WriteLine("Experiencia del Empleado    \n>>");
-                                            ExperienciaEmpleado = Console.ReadLine();
+                                            Console.WriteLine("Nombre del empleado");
+                                            Console.Write(">>");
+                                            Nombre = Console.ReadLine();
+                                            Console.WriteLine("Años de experiencia");
+                                            Console.Write(">>");
+                                            Exp = Convert.ToByte(Console.ReadLine());
 
-                                            pediatra.AgregarInfo(NombreEmpleado, EdadEmpleado, ExperienciaEmpleado, "Pediatra");
+                                            Enfermero.AgregarInfo("Enfermero", Nombre, Exp);
                                             break;
                                         case 4:
                                             Cancelar = true;
@@ -284,7 +278,7 @@ namespace Gestion_Hospital
                                 }
                             } while (!Cancelar);
                             break;
-                        case 3:
+                        case 0:
                             Console.Clear();
                             Salir = true;
                             break;
@@ -308,6 +302,16 @@ namespace Gestion_Hospital
             Console.Clear();
             Console.WriteLine("Error! opcion invalida");
             Console.ReadKey();
+        }
+        public static void MenuEleccion()
+        {
+            Console.Clear();
+            Console.WriteLine("*Elija una opcion*");
+            Console.WriteLine("1. Doctor");
+            Console.WriteLine("2. Pediatra");
+            Console.WriteLine("3. Enfermero\n");
+            Console.WriteLine("4. Volver");
+            Console.WriteLine("====================================");
         }
     }
 }

@@ -1,74 +1,74 @@
 ﻿using System;
 using System.Media;
 
-namespace Gestion_Hospital
+namespace GestionHospital
 {
-    public class Empleados
+    public class Empleado
     {
-        private string[] Nombre = new string[5];
-        private string[] Edad  = new string[5];
-        private string[] Experiencia  = new string[5];
-        private string   Tipo;
 
-        public Empleados(string nombre, string marca, string color, string tipo, int id)
+        private string[] Tipo = new string[5];
+        private string[] Nombre = new string[5];
+        private byte[] Exp = new byte[5];
+
+        public Empleado(string tipo, string nombre, byte exp, int id)
         {
-            Nombre[id]          = nombre;
-            Edad[id]            = marca;
-            Experiencia[id]     = color;
-            Tipo                = tipo;
+            Tipo[id] = tipo;
+            Nombre[id] = nombre;
+            Exp[id] = exp;
         }
-        public virtual void CalcularSalario()
+        public virtual void CalcularSalario(byte opcion)
         {
-            SoundPlayer player = new SoundPlayer();
+
+            byte exp = Exp[opcion];
+            Console.WriteLine($"Su salario actual es de {10000 + (1000 * (exp / 100))}");
+            Console.ReadKey();
         }
-        public virtual void MostrarInfo(int pNumeroAsignado)
+        public virtual void MostrarInfo(int opcion)
         {
             Console.Clear();
-            Console.WriteLine("==========Informacion del empleado==========\n"  );
-            Console.WriteLine("* Nombre: " + Nombre[pNumeroAsignado]            );
-            Console.WriteLine("* Marca:  " + Edad[pNumeroAsignado]              );
-            Console.WriteLine("* Color:  " + Experiencia[pNumeroAsignado]       );
-            Console.WriteLine("* Tipo:   " + Tipo                               );
-            Console.WriteLine("\n============================================"  );
+            Console.WriteLine("==========Informacion del Empleado==========\n");
+            Console.WriteLine($"* Cargo:                {Tipo[opcion]}");
+            Console.WriteLine($"* Nombre:               {Nombre[opcion]}");
+            Console.WriteLine($"* Años de experiencia:  {Exp[opcion]}");
+            Console.WriteLine("\n" + "============================================");
             Console.ReadKey();
         }
         public virtual void MostrarLista()
         {
             for (int i = 0; i < 5; i++)
             {
-                Console.WriteLine($"{(i + 1)}. {Nombre[i]} ({Edad[i]})");
+                Console.WriteLine($"{i + 1}. {Tipo[i]} {Nombre[i]} ({Exp[i]})");
             }
             Console.WriteLine("");
         }
-        public virtual void AgregarInfo(string nombre, string edad, string experiencia, string tipo)
+        public virtual void AgregarInfo(string tipo, string nombre, byte exp)
         {
             for (int i = 0; i < 5; i++)
             {
-                if (Nombre[i] == default && Edad[i] == default && Experiencia[i] == default)
+                if (Tipo[i] == default && Nombre[i] == default && Exp[i] == default)
                 {
-                    Nombre[i]   = $"{tipo} {nombre}";
-                    Edad[i]    = edad;
-                    Experiencia[i]    = experiencia;
+                    Tipo[i] = tipo;
+                    Nombre[i] = nombre;
+                    Exp[i] = exp;
                     break;
                 }
-                else if (Nombre[4] != default && Edad[4] != default && Experiencia[4] != default)
+                else if (Tipo[4] != default && Nombre[4] != default && Exp[4] != default)
                 {
                     Console.Clear();
-                    Console.WriteLine("Ya no tiene espacios para agregar otro empleado de este tipo");
+                    Console.WriteLine("Capacidad maxima ya alcanzada");
                     Console.ReadKey();
                     break;
                 }
             }
         }
-        public virtual void BorrarInfo(int NumeroIdentificador)
+        public virtual void BorrarInfo(int opcion)
         {
             Console.Clear();
-            Nombre[NumeroIdentificador]         = default;
-            Edad[NumeroIdentificador]           = default;
-            Experiencia[NumeroIdentificador]    = default;
-            Tipo                                = default;
+            Tipo[opcion] = default;
+            Nombre[opcion] = default;
+            Exp[opcion] = default;
 
-            Console.WriteLine("Datos del empleado borrados con exito");
+            Console.WriteLine("Datos de vehiculo borrados con exito");
             Console.ReadKey();
         }
     }

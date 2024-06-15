@@ -1,39 +1,32 @@
 ﻿using System;
-using System.Media;
 
-namespace Gestion_Hospital
+
+namespace GestionHospital
 {
-    public class Enfermero : Empleados
+    public class Enfermero : Empleado
     {
-        public Enfermero(string nombre, string marca, string color, string tipo, int id) : base(nombre, marca, color, tipo, id)
+        public Enfermero(string tipo, string nombre, byte exp, int id) : base(tipo, nombre, exp, id)
         {
         }
-
-        public override void CalcularSalario()
+        public override void CalcularSalario(byte exp)
         {
-            Console.Clear();
-            Console.WriteLine("El vehiculo esta haciendo un sonido");
-            SoundPlayer player      = new SoundPlayer();
-            player.SoundLocation    = "SonidoAuto.wav";
-            player.Load();
-            player.Play();
-            Console.ReadKey();
+            base.CalcularSalario(exp);
         }
-        public override void MostrarInfo(int pNumeroAsignado)
+        public override void MostrarInfo(int opcion)
         {
-            base.MostrarInfo(pNumeroAsignado);
+            base.MostrarInfo(opcion);
         }
         public override void MostrarLista()
         {
             base.MostrarLista();
         }
-        /*public override void AgregarInfo(string pNombre, string pMarca, string pColor)
+        public override void AgregarInfo(string tipo, string nombre, byte exp)
         {
-            base.AgregarInfo(pNombre, pMarca, pColor);
-        }*/
-        public override void BorrarInfo(int NumeroIdentificador)
+            base.AgregarInfo(tipo, nombre, exp);
+        }
+        public override void BorrarInfo(int opcion)
         {
-            base.BorrarInfo(NumeroIdentificador);
+            base.BorrarInfo(opcion);
         }
     }
 }
