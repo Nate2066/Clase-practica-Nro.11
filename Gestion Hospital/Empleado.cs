@@ -9,6 +9,7 @@ namespace GestionHospital
         private string[] Tipo = new string[5];
         private string[] Nombre = new string[5];
         private byte[] Exp = new byte[5];
+        private double Salario = 10000;
 
         public Empleado(string tipo, string nombre, byte exp, int id)
         {
@@ -18,9 +19,9 @@ namespace GestionHospital
         }
         public virtual void CalcularSalario(byte opcion)
         {
-
-            byte exp = Exp[opcion];
-            Console.WriteLine($"Su salario actual es de {10000 + (1000 * (exp / 100))}");
+            double exp = Exp[opcion];
+            double salarioTotal = (Salario + (1000 * (exp / 100)));
+            Console.WriteLine("El salario total es de: " + salarioTotal);
             Console.ReadKey();
         }
         public virtual void MostrarInfo(int opcion)

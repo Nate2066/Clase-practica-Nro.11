@@ -60,7 +60,7 @@ namespace GestionHospital
                                                 {
                                                     Console.Clear();
                                                     Console.WriteLine("-Doctores-");
-                                                    Pediatra.MostrarLista();
+                                                    Doctor.MostrarLista();
                                                     Console.WriteLine("\n" + "Seleccione uno para ver o eliminar" + "\n6. Volver");
                                                     byte opc = Convert.ToByte(Console.ReadLine());
                                                     if (opc > 0 && opc < 6)
@@ -108,7 +108,7 @@ namespace GestionHospital
                                                 {
                                                     Console.Clear();
                                                     Console.WriteLine("-Pediatras-");
-                                                    Doctor.MostrarLista();
+                                                    Pediatra.MostrarLista();
                                                     Console.WriteLine("\n" + "Seleccione uno para ver o eliminar" + "\n0. Volver");
                                                     byte opc = Convert.ToByte(Console.ReadLine());
                                                     if (opc > 0 && opc < 6)
@@ -127,7 +127,7 @@ namespace GestionHospital
                                                         }
                                                         else if (opc2 == 3)
                                                         {
-                                                            Doctor.CalcularSalario(Convert.ToByte(opc - 1));
+                                                            Pediatra.CalcularSalario(Convert.ToByte(opc - 1));
 
                                                         }
                                                     }
@@ -176,7 +176,7 @@ namespace GestionHospital
                                                         }
                                                         else if (opc2 == 3)
                                                         {
-                                                            Doctor.CalcularSalario(Convert.ToByte(opc - 1));
+                                                            Enfermero.CalcularSalario(Convert.ToByte(opc - 1));
                                                         }
                                                     }
                                                     else if (opc == 6)
@@ -236,7 +236,7 @@ namespace GestionHospital
                                             Console.WriteLine("Años de experiencia");
                                             Console.Write(">>");
                                             Exp = Convert.ToByte(Console.ReadLine());
-                                            Pediatra.AgregarInfo("Doctor", Nombre, Exp);
+                                            Doctor.AgregarInfo("Doctor", Nombre, Exp);
                                             break;
                                         case 2:
                                             Console.Clear();
@@ -247,7 +247,7 @@ namespace GestionHospital
                                             Console.Write(">>");
                                             Exp = Convert.ToByte(Console.ReadLine());
 
-                                            Doctor.AgregarInfo("Pediatra", Nombre, Exp);
+                                            Pediatra.AgregarInfo("Pediatra", Nombre, Exp);
                                             break;
                                         case 3:
                                             Console.Clear();
@@ -307,8 +307,8 @@ namespace GestionHospital
         {
             Console.Clear();
             Console.WriteLine("*Elija una opcion*");
-            Console.WriteLine("1. Pediatra");
-            Console.WriteLine("2. Doctor");
+            Console.WriteLine("1. Doctor");
+            Console.WriteLine("2. Pediatra");
             Console.WriteLine("3. Enfermero\n");
             Console.WriteLine("4. Volver");
             Console.WriteLine("====================================");
