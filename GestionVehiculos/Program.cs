@@ -19,11 +19,10 @@ namespace GestionVehiculos
             string MarcaVehiculo = default;
             string ColorVehiculo = default;
             string TipoVehiculo = default;
-            int NumeroID = default;
 
-            AutoMovil auto = new AutoMovil(NombreVehiculo, MarcaVehiculo, ColorVehiculo, TipoVehiculo, NumeroID);
-            Camion camion = new Camion(NombreVehiculo, MarcaVehiculo, ColorVehiculo, TipoVehiculo, NumeroID);
-            Motocicleta moto = new Motocicleta(NombreVehiculo, MarcaVehiculo, ColorVehiculo, TipoVehiculo, NumeroID);
+            AutoMovil auto = new AutoMovil(NombreVehiculo, MarcaVehiculo, ColorVehiculo, TipoVehiculo, default);
+            Camion camion = new Camion(NombreVehiculo, MarcaVehiculo, ColorVehiculo, TipoVehiculo, default);
+            Motocicleta moto = new Motocicleta(NombreVehiculo, MarcaVehiculo, ColorVehiculo, TipoVehiculo, default);
 
             //Bienvenida
             Console.WriteLine("---------Binenvenido al sistema de gestion de vehiculos----------");

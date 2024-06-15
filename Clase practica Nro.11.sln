@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestionReserva", "GestionReserva\GestionReserva.csproj", "{7084608A-42CF-43C4-9FEE-71BA4C8A15A9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestionHotel", "GestionReserva\GestionHotel.csproj", "{7084608A-42CF-43C4-9FEE-71BA4C8A15A9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestionVehiculos", "GestionVehiculos\GestionVehiculos.csproj", "{B816DE77-94D9-4C22-890E-EFFE940C7A64}"
 EndProject
