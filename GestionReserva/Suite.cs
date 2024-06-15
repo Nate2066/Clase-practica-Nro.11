@@ -23,10 +23,11 @@ namespace GestionHotel
         {
             if(VistaMar == true) { PrecioTotal += 100;  }
             if(AccesoPiscina == true) { PrecioTotal += 150; }
+            Console.WriteLine(PrecioTotal);
         }
-        public override void MostrarRecibo()
+        public override void MostrarRecibo(double Precio)
         {
-            base.MostrarRecibo();
+            base.MostrarRecibo(PrecioTotal);
             if (VistaMar == true) { Console.WriteLine("\n"+"Incluye vista al mar"); }
             if(AccesoPiscina == true) { Console.WriteLine("Incluye acceso a la piscina"); }
             Console.ReadKey();
@@ -62,7 +63,6 @@ namespace GestionHotel
                 Console.WriteLine("Error! opcion invalida");
                 Console.ReadKey();
             }
-            Console.ReadKey();
         }
     }
 }

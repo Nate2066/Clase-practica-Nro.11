@@ -20,13 +20,13 @@ namespace GestionReserva
 
         public virtual void HacerReservacion() { }
         public virtual void CalcularPrecioTotal() { }
-        public virtual void MostrarRecibo()
+        public virtual void MostrarRecibo(double pPrecio)
         {
             Console.Clear();
             Console.WriteLine("-----------Recibo habitacion-----------");
             Console.WriteLine(TipoHabitacion + "\n");
             Console.WriteLine("Numero de Habitacion: " + NumeroHabitacion);
-            Console.WriteLine("Precio: " + Precio);
+            Console.WriteLine("Precio: " + pPrecio);
             Console.WriteLine("\n" + "---------------------------------------");
         }
     }

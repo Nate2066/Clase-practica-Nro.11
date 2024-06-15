@@ -25,10 +25,11 @@ namespace GestionReserva
         {
             if (CamaDoble == true) { PrecioTotal += 100; }
             if (Desayuno == true) { PrecioTotal += 100; }
+            Console.WriteLine(PrecioTotal);
         }
-        public override void MostrarRecibo()
+        public override void MostrarRecibo(double Precio)
         {
-            base.MostrarRecibo();
+            base.MostrarRecibo(PrecioTotal);
             if (CamaDoble == true) { Console.WriteLine("\n" + "Incluye Cama doble en la habitacion"); }
             if (Desayuno == true) { Console.WriteLine("Incluye Desayuno por la manana"); }
             Console.ReadKey();
@@ -64,7 +65,6 @@ namespace GestionReserva
                 Console.WriteLine("Error! opcion invalida");
                 Console.ReadKey();
             }
-            Console.ReadKey();
         }
     }
 }

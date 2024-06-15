@@ -32,14 +32,15 @@ namespace GestionReserva
                     {
                         suite.HacerReservacion();
                         suite.CalcularPrecioTotal();
-                        suite.MostrarRecibo();
+                        suite.MostrarRecibo(default);
                     }
                     if(opc == 2)
                     {
                         habitacionSencilla.HacerReservacion();
                         habitacionSencilla.CalcularPrecioTotal();
-                        habitacionSencilla.MostrarRecibo();
+                        habitacionSencilla.MostrarRecibo(default);
                     }
+                    Salir = true;
                 }
                 catch (FormatException)
                 {
