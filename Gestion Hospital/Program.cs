@@ -307,8 +307,8 @@ namespace GestionHospital
         {
             Console.Clear();
             Console.WriteLine("*Elija una opcion*");
-            Console.WriteLine("1. Doctor");
-            Console.WriteLine("2. Pediatra");
+            Console.WriteLine("1. Pediatra");
+            Console.WriteLine("2. Doctor");
             Console.WriteLine("3. Enfermero\n");
             Console.WriteLine("4. Volver");
             Console.WriteLine("====================================");

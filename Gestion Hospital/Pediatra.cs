@@ -3,7 +3,7 @@
 
 namespace GestionHospital
 {
-    internal class Pediatra : Empleado
+    public class Pediatra : Empleado
     {
         public Pediatra(string tipo, string nombre, byte exp, int id) : base(tipo, nombre, exp, id)
         {
