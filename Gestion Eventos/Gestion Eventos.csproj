@@ -44,7 +44,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Concierto.cs" />
+    <Compile Include="Conferencia.cs" />
     <Compile Include="Evento.cs" />
+    <Compile Include="Piñata.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

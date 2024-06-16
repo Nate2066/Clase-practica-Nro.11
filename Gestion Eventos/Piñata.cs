@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace Gestion_Eventos
 {
-    public class Concierto : Evento
+    internal class Piñata : Evento
     {
-        public Concierto(string tipo, string nombre, int id) : base(tipo, nombre, id)
+        public Piñata(string tipo, string nombre, int id) : base(tipo, nombre, id)
         {
         }
 
         public override void CalcularCosto(int costo)
         {
-            costo = 50;
-            base.CalcularCosto(costo);
+            Console.WriteLine("Gratis :D");
+            Console.ReadKey();
         }
         public override void MostrarInfo(int opcion)
         {
