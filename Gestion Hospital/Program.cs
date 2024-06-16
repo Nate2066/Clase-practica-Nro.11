@@ -5,7 +5,7 @@ namespace GestionHospital
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             //Variables principales
             //El "default" asigna los valores por defecto a una variable, en caso de un string seria un espacio y en caso de un int seria un "0", se hace uso de esta para asignar mas facilmente un valor por defecto
@@ -224,41 +224,23 @@ namespace GestionHospital
                                     Console.Clear();
                                     Console.WriteLine("==========Agregar Empleado==========\n");
                                     MenuEleccion();
-                                    byte opcTipoVehiculo = Convert.ToByte(Console.ReadLine());
+                                    byte opcEmpleado = Convert.ToByte(Console.ReadLine());
+                                    string nombre;
+                                    byte exp;
 
-                                    switch (opcTipoVehiculo)
+                                    switch (opcEmpleado)
                                     {
                                         case 1:
-                                            Console.Clear();
-                                            Console.WriteLine("Nombre del empleado");
-                                            Console.Write(">>");
-                                            Nombre = Console.ReadLine();
-                                            Console.WriteLine("Años de experiencia");
-                                            Console.Write(">>");
-                                            Exp = Convert.ToByte(Console.ReadLine());
-                                            Doctor.AgregarInfo("Doctor", Nombre, Exp);
+                                            AgregarEmpleado(out nombre, out exp); // El parametro hace que un metodo devuelva multiples valores
+                                            Doctor.AgregarInfo("Doctor", nombre, exp);
                                             break;
-                                        case 2:
-                                            Console.Clear();
-                                            Console.WriteLine("Nombre del empleado");
-                                            Console.Write(">>");
-                                            Nombre = Console.ReadLine();
-                                            Console.WriteLine("Años de experiencia");
-                                            Console.Write(">>");
-                                            Exp = Convert.ToByte(Console.ReadLine());
-
-                                            Pediatra.AgregarInfo("Pediatra", Nombre, Exp);
+                                        case 2: 
+                                            AgregarEmpleado(out nombre, out exp); // Algo como un multi-return
+                                            Pediatra.AgregarInfo("Pediatra", nombre, exp);
                                             break;
                                         case 3:
-                                            Console.Clear();
-                                            Console.WriteLine("Nombre del empleado");
-                                            Console.Write(">>");
-                                            Nombre = Console.ReadLine();
-                                            Console.WriteLine("Años de experiencia");
-                                            Console.Write(">>");
-                                            Exp = Convert.ToByte(Console.ReadLine());
-
-                                            Enfermero.AgregarInfo("Enfermero", Nombre, Exp);
+                                            AgregarEmpleado(out nombre, out exp); //permiten que un método modifique las variables y luego las devuelva al llamador.
+                                            Enfermero.AgregarInfo("Enfermero", nombre, exp);
                                             break;
                                         case 4:
                                             Cancelar = true;
@@ -297,13 +279,13 @@ namespace GestionHospital
                 }
             } while (!Salir);
         }
-        public static void MensajeError()
+        public static void MensajeError() // usado en los try-catch
         {
             Console.Clear();
             Console.WriteLine("Error! opcion invalida");
             Console.ReadKey();
         }
-        public static void MenuEleccion()
+        public static void MenuEleccion() // usado en los menus de eleccion de empleados
         {
             Console.Clear();
             Console.WriteLine("*Elija una opcion*");
@@ -312,6 +294,16 @@ namespace GestionHospital
             Console.WriteLine("3. Enfermero\n");
             Console.WriteLine("4. Volver");
             Console.WriteLine("====================================");
+        }
+        static void AgregarEmpleado(out string nombre, out byte exp) // comun al momento de agrgar un empleado independiente del cargo
+        {
+            Console.Clear();
+            Console.WriteLine("Nombre del empleado");
+            Console.Write(">>");
+            nombre  = Console.ReadLine();
+            Console.WriteLine("Años de experiencia");
+            Console.Write(">>");
+            exp     = Convert.ToByte(Console.ReadLine());
         }
     }
 }

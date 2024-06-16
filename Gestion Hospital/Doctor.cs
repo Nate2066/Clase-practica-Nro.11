@@ -8,7 +8,6 @@ namespace GestionHospital
         {
 
         }
-
         public override void CalcularSalario(byte exp)
         {
             base.CalcularSalario(exp);
